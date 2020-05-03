@@ -2,21 +2,19 @@
 
 ### Time measurement of iterative and recursive procedures
 
-**Computational complexity** is a field from computer science which analyzes algorithms based on the amount resources required for running it. The amount of resources required depends on the input size (say $n$). When analyzing an algorithm we can consider the time complexity and space complexity. 
+**Computational complexity** is a field from computer science which analyzes algorithms based on the amount resources required for running it. The amount of resources required depends on the input size (say n). When analyzing an algorithm we can consider the time complexity and space complexity. 
 
 The **space complexity** is the amount of memory space required to solve a problem in relation to the input size.
 
 The **time complexity** is the computational complexity that describes the amount of time it takes to run an algorithm.There are three cases When analyzing the time complexity: best-case, average-case and worst-case. 
 
-- **Best case** is the function which performs the minimum number of steps on input data of $n$ elements. 
-- **Worst case** is the function which performs the maximum number of steps on input data of size $n$. 
-- **Average case** is the function which performs an average number of steps on input data of $n$ elements.
+- **Best case** is the function which performs the minimum number of steps on input data of n elements. 
+- **Worst case** is the function which performs the maximum number of steps on input data of size n. 
+- **Average case** is the function which performs an average number of steps on input data of n elements.
 
 A **recursive function** is a function that calls itself in specific conditions. e.g.  Fibonacci number sequence, factorial function, quick sort etc. 
 
 An **Iterative function** is loop based imperative repetitions of a process.
-
-![](IR.png)
 
 ### Examples of Iteration and Recursion
 - Traversal of trees: Recursive
@@ -34,8 +32,8 @@ An **Iterative function** is loop based imperative repetitions of a process.
 Big-O notation(asymptotic notation) is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity.
 
 ## Factorial 
-The factorial of a positive integer $n$, denoted by $n!$, is the product of all positive integers less than or equal to $n$. The value of 0! and 1! is 1. Mathematically,
-$n!=n(n-1)(n-2)...3.2.1$
+The factorial of a positive integer n, denoted by n!, is the product of all positive integers less than or equal to n. The value of 0! and 1! is 1. Mathematically,
+n!=n(n-1)(n-2)...3.2.1
 
 ```python
 #factorial Recursive Python Code
@@ -49,12 +47,12 @@ $n!=n(n-1)(n-2)...3.2.1$
     	else:  
        		return n*factorial_recursion(n-1)
 ```
-The complexity factor of recursive time is $O(n)$.
+The complexity factor of recursive time is O(n).
 
 
 ## Fibonacci Sequence
 The Fibonacci Sequence is the series of numbers:
-$$0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... $$
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... 
 The next number is found by adding up the two numbers before it.
 
 ```python
@@ -71,8 +69,8 @@ def fibonacci_recursive(n):
 ```
 
 #### Run-time Analysis
-We know that the recursive equation for Fibonacci is $T(n)=T(n-1)+T(n-2)+O(1)$. You can check [here](https://www.geeksforgeeks.org/time-complexity-recursive-fibonacci-program/) for the detailed solution to the recursive equation. The running time is exponential given by $O(1.6180)^n$.
-- Time complexity of recursive code is $O(1.6180)^n$.
+We know that the recursive equation for Fibonacci is T(n)=T(n-1)+T(n-2)+O(1). You can check [here](https://www.geeksforgeeks.org/time-complexity-recursive-fibonacci-program/) for the detailed solution to the recursive equation. The running time is exponential given by O(1.6180)^n.
+- Time complexity of recursive code is $O(1.6180)^n.
 - Time Complexity of iterative code is $O(n)$.
 
 
@@ -102,7 +100,7 @@ Steps of the binary search:
 - Repeat the steps above until the value is found or the left bounder is equal or higher the right bounder.
 
 #### Run-time Analysis
-Binary search is a fast search algorithm with run-time complexity of $O(log_2n)$, where $n$ is total number of elements in the list. This search algorithm works on the principle of divide and conquer.
+Binary search is a fast search algorithm with run-time complexity of O(log_2n), where n is total number of elements in the list. This search algorithm works on the principle of divide and conquer.
 
 ## Linear Search
 A linear search or sequential search is a method for finding an element within a list, the list not neccesarily need to be sorted. It sequentially checks each element of the list until a match is found or the whole list has been searched.
@@ -120,8 +118,8 @@ linear_search([1,3,6,5,15,9,11], 15)
 ```
 The python code will return **True**, since 15 is part of the list.  A linear search scans one item at a time, without jumping to any item .
 
-- Worst complexity: $O(n)$
-- Average complexity: $O(n)$
+- Worst complexity: O(n)
+- Average complexity: O(n)
 
 
   
@@ -154,18 +152,18 @@ insertionSort(array)
 `Output:  [5, 6, 11, 12, 13]`
 
 #### Run-time Analysis
- In this sorting, during ith iteration, the ﬁrst $(i-1)$ elements are sorted and ith card is inserted to the correct
-place by performing linear search on the ﬁrst $(i-1)$ elements. This algorithm performs well on smaller
+ In this sorting, during ith iteration, the ﬁrst (i-1) elements are sorted and ith card is inserted to the correct
+place by performing linear search on the ﬁrst (i-1) elements. This algorithm performs well on smaller
 inputs and on inputs that are already sorted.
 
 We shall analyze the run time of insertion sort by considering its worst case and best case behavior. From the code, the cost (the number of times the line is executed) incurred
 in best and worst case inputs is given. 
-Alternatively, the cost can also be obtained using recurrence relation. Recurrence relation in worst case: $T(n)=T(n-1)+n-1, T(2) = 1$, solving this using substitution
-method or recurrence tree method yields $T(n) = O(n^2)$. 
+Alternatively, the cost can also be obtained using recurrence relation. Recurrence relation in worst case: T(n)=T(n-1)+n-1, T(2) = 1, solving this using substitution
+method or recurrence tree method yields T(n) = O(n^2). 
 
-Recurrence relation in best case: $T(n)=T(n-1)+1,T(2)=1$, and the solution is $T(n) = O(n).$
+Recurrence relation in best case: T(n)=T(n-1)+1,T(2)=1, and the solution is T(n) = O(n).
 
-Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time (order of $n$) when elements are already sorted.
+Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time (order of n) when elements are already sorted.
 
 
 
@@ -201,7 +199,7 @@ if __name__ == '__main__':
 [7, 6, 3]
 ```
 #### Run-time Analysis
-The ruuning time of Heap's permutation will grow in a factorial way, based on the size of the input data. If the input is of size $n$, algorithm has factorial time complexity $O(n!)$.
+The ruuning time of Heap's permutation will grow in a factorial way, based on the size of the input data. If the input is of size $n$, algorithm has factorial time complexity O(n!).
 
 
 
@@ -275,9 +273,9 @@ for i in range(n):
 
 #### Run-time Analysis
 The recursion for quick sort depends the size of recursive sub problem generated at each stage of the recursion. Since the pivot can take any value, the size of a sub problem can take any value in the range
-$[0..n-1]$. 
-- Best case: $O(n log_2 n)$
-- Worst case: $O(n^2)$
+[0..n-1]. 
+- Best case: O(n log_2 n)
+- Worst case: O(n^2)
 
 ## Tower of Hanoi
 Tower of Hanoi is a mathematical puzzle where we have three rods and n disks. The objective of the puzzle is to move the entire stack to another rod, obeying the following simple rules:
@@ -318,7 +316,7 @@ Move disk 2 from source P to destination R
 Move disk 1 from source S to destination R
 ```
 #### Run-time Analysis
-The time complexity to find order of moves of discs in Tower of Hanoi problem is $O(2^n)$.
+The time complexity to find order of moves of discs in Tower of Hanoi problem is O(2^n).
 
 
 ## Final Notes
